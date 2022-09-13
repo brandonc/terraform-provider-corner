@@ -16,6 +16,10 @@ type resourceNeverType struct{}
 
 var _ resource.Resource = (*resourceNever)(nil)
 
+func NewNeverResource() resource.Resource {
+	return &resourceNever{}
+}
+
 func (r resourceNeverType) GetSchema(_ context.Context) (tfsdk.Schema, diag.Diagnostics) {
 	return tfsdk.Schema{
 		Attributes: map[string]tfsdk.Attribute{
