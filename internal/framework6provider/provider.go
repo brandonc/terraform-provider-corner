@@ -47,6 +47,7 @@ func (p *testProvider) Resources(_ context.Context) []func() resource.Resource {
 		NewTimeoutsResource,
 		NewUserResource,
 		NewNeverResource,
+		NewFloat64PrecisionResource,
 	}
 }
 
