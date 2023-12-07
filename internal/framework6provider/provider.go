@@ -42,8 +42,8 @@ func (p *testProvider) Configure(ctx context.Context, req provider.ConfigureRequ
 
 func (p *testProvider) GetResources(_ context.Context) (map[string]provider.ResourceType, diag.Diagnostics) {
 	return map[string]provider.ResourceType{
-		"framework_user": resourceUserType{},
-		"never_creates":  resourceNeverCreatesType{},
+		"framework_user":  resourceUserType{},
+		"framework_never": resourceNeverType{},
 	}, nil
 }
 
