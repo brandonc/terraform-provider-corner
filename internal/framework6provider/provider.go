@@ -72,8 +72,9 @@ func (p *testProvider) Resources(_ context.Context) []func() resource.Resource {
 		NewTimeoutsResource,
 		NewTimeTypesResource,
 		NewUserResource,
-		NewNeverResource,
+		NewFloat32PrecisionResource,
 		NewFloat64PrecisionResource,
+		NewNeverResource,
 	}
 }
 
@@ -85,7 +86,9 @@ func (p *testProvider) Functions(ctx context.Context) []func() function.Function
 	return []func() function.Function{
 		NewBoolFunction,
 		NewDynamicFunction,
+		NewFloat32Function,
 		NewFloat64Function,
+		NewInt32Function,
 		NewInt64Function,
 		NewListFunction,
 		NewMapFunction,
