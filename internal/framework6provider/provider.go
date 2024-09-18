@@ -65,6 +65,7 @@ func (p *testProvider) Configure(ctx context.Context, req provider.ConfigureRequ
 
 func (p *testProvider) Resources(_ context.Context) []func() resource.Resource {
 	return []func() resource.Resource{
+		NewNeverResource,
 		NewSchemaResource,
 		NewDeferredActionResource,
 		NewDeferredActionPlanModificationResource,
@@ -75,7 +76,7 @@ func (p *testProvider) Resources(_ context.Context) []func() resource.Resource {
 		NewFloat32PrecisionResource,
 		NewFloat64PrecisionResource,
 		NewTFSDKReflectionResource,
-		NewNeverResource,
+		NewMoveStateResource,
 	}
 }
 
