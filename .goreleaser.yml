@@ -34,5 +34,14 @@ release:
       name_template: '{{ .ProjectName }}_{{ .Version }}_manifest.json'
   ids:
     - none
-binary_signs:
-  - stdin: "{{ .Env.PASSPHRASE }}"
+signs:
+  - artifacts: checksum
+    cmd: gpg2
+    args:
+      - "--batch"
+      - "-u"
+      - "{{ .Env.GPG_FINGERPRINT }}"
+      - "--output"
+      - "${signature}"
+      - "--detach-sign"
+      - "${artifact}"
