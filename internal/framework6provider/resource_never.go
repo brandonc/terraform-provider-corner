@@ -9,8 +9,6 @@ import (
 	"github.com/hashicorp/terraform-plugin-framework/resource/schema"
 )
 
-type resourceNeverType struct{}
-
 var _ resource.Resource = (*resourceNever)(nil)
 
 func NewNeverResource() resource.Resource {
@@ -31,9 +29,7 @@ func (r resourceNever) Metadata(ctx context.Context, req resource.MetadataReques
 	resp.TypeName = req.ProviderTypeName + "_never"
 }
 
-type resourceNever struct {
-	p testProvider
-}
+type resourceNever struct{}
 
 type never struct {
 	Name string `tfsdk:"name"`
