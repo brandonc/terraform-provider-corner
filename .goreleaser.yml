@@ -35,5 +35,4 @@ release:
   ids:
     - none
 binary_signs:
-  - {}
-  stdin: "{{ .Env.PASSPHRASE }}"
+  - stdin: "{{ .Env.PASSPHRASE }}"
