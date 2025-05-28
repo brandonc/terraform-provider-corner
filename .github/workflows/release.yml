@@ -49,6 +49,7 @@ jobs:
           version: '~> v2'
           args: release --clean
         env:
+          PASSPHRASE: ${{ secrets.PASSPHRASE }}
           GPG_FINGERPRINT: ${{ steps.import_gpg.outputs.fingerprint }}
           # GitHub sets this automatically
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
