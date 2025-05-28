@@ -38,7 +38,7 @@ jobs:
         name: Install signore
         uses: hashicorp/setup-signore@v2
         with:
-          github-token: ${{secrets.GITHUB_TOKEN_SIGNORE}}
+          github-token: ${{secrets.SIGNORE_GITHUB_TOKEN}}
       -
         name: Import GPG key
         id: import_gpg
