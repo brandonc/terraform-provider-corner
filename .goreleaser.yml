@@ -4,7 +4,6 @@ archives:
       # Ensure only built binary and license file are archived
       - src: 'LICENSE'
         dst: 'LICENSE.txt'
-    format: zip
     name_template: '{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}'
 before:
   hooks:
@@ -47,5 +46,3 @@ signs:
     cmd: signore
     id: key-id
     signature: ${artifact}.F03291ED.sig
-snapshot:
-  name_template: "{{ .Tag }}-next"
